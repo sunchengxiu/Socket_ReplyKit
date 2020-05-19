@@ -21,6 +21,23 @@
 		E8A89C1A2473B10500A92284 /* RongRTCVideoEncoderSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C0E2473B10500A92284 /* RongRTCVideoEncoderSettings.m */; };
 		E8A89C1B2473B10500A92284 /* RongRTCVideoDecoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C142473B10500A92284 /* RongRTCVideoDecoder.mm */; };
 		E8A89C1C2473B10500A92284 /* RongRTCVideoEncoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C172473B10500A92284 /* RongRTCVideoEncoder.mm */; };
+		E8A89C242473B18500A92284 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8A89C232473B18500A92284 /* ReplayKit.framework */; };
+		E8A89C282473B18500A92284 /* SampleHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C272473B18500A92284 /* SampleHandler.m */; };
+		E8A89C2F2473B18500A92284 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8A89C232473B18500A92284 /* ReplayKit.framework */; };
+		E8A89C312473B18500A92284 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8A89C302473B18500A92284 /* UIKit.framework */; };
+		E8A89C352473B18500A92284 /* BroadcastSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C342473B18500A92284 /* BroadcastSetupViewController.m */; };
+		E8A89C392473B18500A92284 /* SocketReplySetupUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E8A89C2E2473B18500A92284 /* SocketReplySetupUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E8A89C3C2473B18500A92284 /* SocketReply.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E8A89C212473B18500A92284 /* SocketReply.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E8A89C442473B1C800A92284 /* RongRTCVideoDecoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C142473B10500A92284 /* RongRTCVideoDecoder.mm */; };
+		E8A89C452473B1CD00A92284 /* RongRTCCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C0B2473B10500A92284 /* RongRTCCodec.m */; };
+		E8A89C462473B1D100A92284 /* RongRTCVideoEncoderSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C0E2473B10500A92284 /* RongRTCVideoEncoderSettings.m */; };
+		E8A89C472473B1D700A92284 /* helpers.mm in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C0C2473B10500A92284 /* helpers.mm */; };
+		E8A89C482473B1DB00A92284 /* RongRTCVideoEncoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C172473B10500A92284 /* RongRTCVideoEncoder.mm */; };
+		E8A89C552473B22400A92284 /* RongRTCBufferUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C4E2473B22400A92284 /* RongRTCBufferUtil.m */; };
+		E8A89C562473B22400A92284 /* RongRTCClientSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C502473B22400A92284 /* RongRTCClientSocket.m */; };
+		E8A89C572473B22400A92284 /* RongRTCServerSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C512473B22400A92284 /* RongRTCServerSocket.m */; };
+		E8A89C582473B22400A92284 /* RongRTCThread.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C522473B22400A92284 /* RongRTCThread.m */; };
+		E8A89C592473B22400A92284 /* RongRTCSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C542473B22400A92284 /* RongRTCSocket.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +55,36 @@
 			remoteGlobalIDString = E8A89B972473B0D400A92284;
 			remoteInfo = Socket_Replykit;
 		};
+		E8A89C372473B18500A92284 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8A89B902473B0D400A92284 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8A89C2D2473B18500A92284;
+			remoteInfo = SocketReplySetupUI;
+		};
+		E8A89C3A2473B18500A92284 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8A89B902473B0D400A92284 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8A89C202473B18500A92284;
+			remoteInfo = SocketReply;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E8A89C432473B18500A92284 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E8A89C3C2473B18500A92284 /* SocketReply.appex in Embed App Extensions */,
+				E8A89C392473B18500A92284 /* SocketReplySetupUI.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E8A89B982473B0D400A92284 /* Socket_Replykit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Socket_Replykit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +116,27 @@
 		E8A89C142473B10500A92284 /* RongRTCVideoDecoder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RongRTCVideoDecoder.mm; sourceTree = "<group>"; };
 		E8A89C162473B10500A92284 /* RongRTCVideoEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RongRTCVideoEncoder.h; sourceTree = "<group>"; };
 		E8A89C172473B10500A92284 /* RongRTCVideoEncoder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RongRTCVideoEncoder.mm; sourceTree = "<group>"; };
+		E8A89C212473B18500A92284 /* SocketReply.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SocketReply.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8A89C232473B18500A92284 /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
+		E8A89C262473B18500A92284 /* SampleHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleHandler.h; sourceTree = "<group>"; };
+		E8A89C272473B18500A92284 /* SampleHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleHandler.m; sourceTree = "<group>"; };
+		E8A89C292473B18500A92284 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8A89C2E2473B18500A92284 /* SocketReplySetupUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SocketReplySetupUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8A89C302473B18500A92284 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E8A89C332473B18500A92284 /* BroadcastSetupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BroadcastSetupViewController.h; sourceTree = "<group>"; };
+		E8A89C342473B18500A92284 /* BroadcastSetupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BroadcastSetupViewController.m; sourceTree = "<group>"; };
+		E8A89C362473B18500A92284 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8A89C4A2473B22400A92284 /* RongRTCClientSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RongRTCClientSocket.h; sourceTree = "<group>"; };
+		E8A89C4B2473B22400A92284 /* RongRTCThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RongRTCThread.h; sourceTree = "<group>"; };
+		E8A89C4C2473B22400A92284 /* RongRTCServerSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RongRTCServerSocket.h; sourceTree = "<group>"; };
+		E8A89C4D2473B22400A92284 /* RongRTCSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RongRTCSocket.h; sourceTree = "<group>"; };
+		E8A89C4E2473B22400A92284 /* RongRTCBufferUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RongRTCBufferUtil.m; sourceTree = "<group>"; };
+		E8A89C4F2473B22400A92284 /* RongRTCSocketHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RongRTCSocketHeader.h; sourceTree = "<group>"; };
+		E8A89C502473B22400A92284 /* RongRTCClientSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RongRTCClientSocket.m; sourceTree = "<group>"; };
+		E8A89C512473B22400A92284 /* RongRTCServerSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RongRTCServerSocket.m; sourceTree = "<group>"; };
+		E8A89C522473B22400A92284 /* RongRTCThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RongRTCThread.m; sourceTree = "<group>"; };
+		E8A89C532473B22400A92284 /* RongRTCBufferUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RongRTCBufferUtil.h; sourceTree = "<group>"; };
+		E8A89C542473B22400A92284 /* RongRTCSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RongRTCSocket.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +161,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E8A89C1E2473B18500A92284 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8A89C242473B18500A92284 /* ReplayKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8A89C2B2473B18500A92284 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8A89C2F2473B18500A92284 /* ReplayKit.framework in Frameworks */,
+				E8A89C312473B18500A92284 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -103,6 +187,9 @@
 				E8A89B9A2473B0D400A92284 /* Socket_Replykit */,
 				E8A89BB62473B0DA00A92284 /* Socket_ReplykitTests */,
 				E8A89BC12473B0DA00A92284 /* Socket_ReplykitUITests */,
+				E8A89C252473B18500A92284 /* SocketReply */,
+				E8A89C322473B18500A92284 /* SocketReplySetupUI */,
+				E8A89C222473B18500A92284 /* Frameworks */,
 				E8A89B992473B0D400A92284 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,6 +200,8 @@
 				E8A89B982473B0D400A92284 /* Socket_Replykit.app */,
 				E8A89BB32473B0DA00A92284 /* Socket_ReplykitTests.xctest */,
 				E8A89BBE2473B0DA00A92284 /* Socket_ReplykitUITests.xctest */,
+				E8A89C212473B18500A92284 /* SocketReply.appex */,
+				E8A89C2E2473B18500A92284 /* SocketReplySetupUI.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,6 +209,7 @@
 		E8A89B9A2473B0D400A92284 /* Socket_Replykit */ = {
 			isa = PBXGroup;
 			children = (
+				E8A89C492473B22400A92284 /* Socket */,
 				E8A89C0A2473B10500A92284 /* Codec */,
 				E8A89C122473B10500A92284 /* Decoder */,
 				E8A89C152473B10500A92284 /* Encoder */,
@@ -188,6 +278,53 @@
 			path = Encoder;
 			sourceTree = "<group>";
 		};
+		E8A89C222473B18500A92284 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E8A89C232473B18500A92284 /* ReplayKit.framework */,
+				E8A89C302473B18500A92284 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E8A89C252473B18500A92284 /* SocketReply */ = {
+			isa = PBXGroup;
+			children = (
+				E8A89C262473B18500A92284 /* SampleHandler.h */,
+				E8A89C272473B18500A92284 /* SampleHandler.m */,
+				E8A89C292473B18500A92284 /* Info.plist */,
+			);
+			path = SocketReply;
+			sourceTree = "<group>";
+		};
+		E8A89C322473B18500A92284 /* SocketReplySetupUI */ = {
+			isa = PBXGroup;
+			children = (
+				E8A89C332473B18500A92284 /* BroadcastSetupViewController.h */,
+				E8A89C342473B18500A92284 /* BroadcastSetupViewController.m */,
+				E8A89C362473B18500A92284 /* Info.plist */,
+			);
+			path = SocketReplySetupUI;
+			sourceTree = "<group>";
+		};
+		E8A89C492473B22400A92284 /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				E8A89C4A2473B22400A92284 /* RongRTCClientSocket.h */,
+				E8A89C4B2473B22400A92284 /* RongRTCThread.h */,
+				E8A89C4C2473B22400A92284 /* RongRTCServerSocket.h */,
+				E8A89C4D2473B22400A92284 /* RongRTCSocket.h */,
+				E8A89C4E2473B22400A92284 /* RongRTCBufferUtil.m */,
+				E8A89C4F2473B22400A92284 /* RongRTCSocketHeader.h */,
+				E8A89C502473B22400A92284 /* RongRTCClientSocket.m */,
+				E8A89C512473B22400A92284 /* RongRTCServerSocket.m */,
+				E8A89C522473B22400A92284 /* RongRTCThread.m */,
+				E8A89C532473B22400A92284 /* RongRTCBufferUtil.h */,
+				E8A89C542473B22400A92284 /* RongRTCSocket.m */,
+			);
+			path = Socket;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -198,10 +335,13 @@
 				E8A89B942473B0D400A92284 /* Sources */,
 				E8A89B952473B0D400A92284 /* Frameworks */,
 				E8A89B962473B0D400A92284 /* Resources */,
+				E8A89C432473B18500A92284 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E8A89C382473B18500A92284 /* PBXTargetDependency */,
+				E8A89C3B2473B18500A92284 /* PBXTargetDependency */,
 			);
 			name = Socket_Replykit;
 			productName = Socket_Replykit;
@@ -244,6 +384,40 @@
 			productReference = E8A89BBE2473B0DA00A92284 /* Socket_ReplykitUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		E8A89C202473B18500A92284 /* SocketReply */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8A89C402473B18500A92284 /* Build configuration list for PBXNativeTarget "SocketReply" */;
+			buildPhases = (
+				E8A89C1D2473B18500A92284 /* Sources */,
+				E8A89C1E2473B18500A92284 /* Frameworks */,
+				E8A89C1F2473B18500A92284 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SocketReply;
+			productName = SocketReply;
+			productReference = E8A89C212473B18500A92284 /* SocketReply.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		E8A89C2D2473B18500A92284 /* SocketReplySetupUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8A89C3D2473B18500A92284 /* Build configuration list for PBXNativeTarget "SocketReplySetupUI" */;
+			buildPhases = (
+				E8A89C2A2473B18500A92284 /* Sources */,
+				E8A89C2B2473B18500A92284 /* Frameworks */,
+				E8A89C2C2473B18500A92284 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SocketReplySetupUI;
+			productName = SocketReplySetupUI;
+			productReference = E8A89C2E2473B18500A92284 /* SocketReplySetupUI.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -264,6 +438,12 @@
 						CreatedOnToolsVersion = 11.4.1;
 						TestTargetID = E8A89B972473B0D400A92284;
 					};
+					E8A89C202473B18500A92284 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					E8A89C2D2473B18500A92284 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
 				};
 			};
 			buildConfigurationList = E8A89B932473B0D400A92284 /* Build configuration list for PBXProject "Socket_Replykit" */;
@@ -282,6 +462,8 @@
 				E8A89B972473B0D400A92284 /* Socket_Replykit */,
 				E8A89BB22473B0DA00A92284 /* Socket_ReplykitTests */,
 				E8A89BBD2473B0DA00A92284 /* Socket_ReplykitUITests */,
+				E8A89C202473B18500A92284 /* SocketReply */,
+				E8A89C2D2473B18500A92284 /* SocketReplySetupUI */,
 			);
 		};
 /* End PBXProject section */
@@ -311,6 +493,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E8A89C1F2473B18500A92284 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8A89C2C2473B18500A92284 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -320,13 +516,18 @@
 			files = (
 				E8A89BA32473B0D400A92284 /* ViewController.m in Sources */,
 				E8A89C1C2473B10500A92284 /* RongRTCVideoEncoder.mm in Sources */,
+				E8A89C582473B22400A92284 /* RongRTCThread.m in Sources */,
 				E8A89C1A2473B10500A92284 /* RongRTCVideoEncoderSettings.m in Sources */,
 				E8A89C1B2473B10500A92284 /* RongRTCVideoDecoder.mm in Sources */,
+				E8A89C562473B22400A92284 /* RongRTCClientSocket.m in Sources */,
 				E8A89C192473B10500A92284 /* helpers.mm in Sources */,
 				E8A89C182473B10500A92284 /* RongRTCCodec.m in Sources */,
+				E8A89C592473B22400A92284 /* RongRTCSocket.m in Sources */,
 				E8A89B9D2473B0D400A92284 /* AppDelegate.m in Sources */,
+				E8A89C552473B22400A92284 /* RongRTCBufferUtil.m in Sources */,
 				E8A89BAE2473B0DA00A92284 /* main.m in Sources */,
 				E8A89BA02473B0D400A92284 /* SceneDelegate.m in Sources */,
+				E8A89C572473B22400A92284 /* RongRTCServerSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +547,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E8A89C1D2473B18500A92284 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8A89C442473B1C800A92284 /* RongRTCVideoDecoder.mm in Sources */,
+				E8A89C452473B1CD00A92284 /* RongRTCCodec.m in Sources */,
+				E8A89C472473B1D700A92284 /* helpers.mm in Sources */,
+				E8A89C282473B18500A92284 /* SampleHandler.m in Sources */,
+				E8A89C482473B1DB00A92284 /* RongRTCVideoEncoder.mm in Sources */,
+				E8A89C462473B1D100A92284 /* RongRTCVideoEncoderSettings.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8A89C2A2473B18500A92284 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8A89C352473B18500A92284 /* BroadcastSetupViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -358,6 +580,16 @@
 			isa = PBXTargetDependency;
 			target = E8A89B972473B0D400A92284 /* Socket_Replykit */;
 			targetProxy = E8A89BBF2473B0DA00A92284 /* PBXContainerItemProxy */;
+		};
+		E8A89C382473B18500A92284 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8A89C2D2473B18500A92284 /* SocketReplySetupUI */;
+			targetProxy = E8A89C372473B18500A92284 /* PBXContainerItemProxy */;
+		};
+		E8A89C3B2473B18500A92284 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8A89C202473B18500A92284 /* SocketReply */;
+			targetProxy = E8A89C3A2473B18500A92284 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -601,6 +833,78 @@
 			};
 			name = Release;
 		};
+		E8A89C3E2473B18500A92284 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9CVMN4UZK4;
+				INFOPLIST_FILE = SocketReplySetupUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "RongCloud.Socket-Replykit.SocketReplySetupUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E8A89C3F2473B18500A92284 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9CVMN4UZK4;
+				INFOPLIST_FILE = SocketReplySetupUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "RongCloud.Socket-Replykit.SocketReplySetupUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E8A89C412473B18500A92284 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9CVMN4UZK4;
+				INFOPLIST_FILE = SocketReply/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "RongCloud.Socket-Replykit.SocketReply";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E8A89C422473B18500A92284 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9CVMN4UZK4;
+				INFOPLIST_FILE = SocketReply/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "RongCloud.Socket-Replykit.SocketReply";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -636,6 +940,24 @@
 			buildConfigurations = (
 				E8A89BCE2473B0DA00A92284 /* Debug */,
 				E8A89BCF2473B0DA00A92284 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8A89C3D2473B18500A92284 /* Build configuration list for PBXNativeTarget "SocketReplySetupUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8A89C3E2473B18500A92284 /* Debug */,
+				E8A89C3F2473B18500A92284 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8A89C402473B18500A92284 /* Build configuration list for PBXNativeTarget "SocketReply" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8A89C412473B18500A92284 /* Debug */,
+				E8A89C422473B18500A92284 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
