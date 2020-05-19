@@ -38,6 +38,11 @@
 		E8A89C572473B22400A92284 /* RongRTCServerSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C512473B22400A92284 /* RongRTCServerSocket.m */; };
 		E8A89C582473B22400A92284 /* RongRTCThread.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C522473B22400A92284 /* RongRTCThread.m */; };
 		E8A89C592473B22400A92284 /* RongRTCSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C542473B22400A92284 /* RongRTCSocket.m */; };
+		E8A89C5A2473B2B900A92284 /* RongRTCSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C542473B22400A92284 /* RongRTCSocket.m */; };
+		E8A89C5B2473B2BC00A92284 /* RongRTCClientSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C502473B22400A92284 /* RongRTCClientSocket.m */; };
+		E8A89C5C2473B2BF00A92284 /* RongRTCServerSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C512473B22400A92284 /* RongRTCServerSocket.m */; };
+		E8A89C5D2473B2C100A92284 /* RongRTCBufferUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C4E2473B22400A92284 /* RongRTCBufferUtil.m */; };
+		E8A89C5E2473B2C800A92284 /* RongRTCThread.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C522473B22400A92284 /* RongRTCThread.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -310,17 +315,17 @@
 		E8A89C492473B22400A92284 /* Socket */ = {
 			isa = PBXGroup;
 			children = (
-				E8A89C4A2473B22400A92284 /* RongRTCClientSocket.h */,
-				E8A89C4B2473B22400A92284 /* RongRTCThread.h */,
-				E8A89C4C2473B22400A92284 /* RongRTCServerSocket.h */,
-				E8A89C4D2473B22400A92284 /* RongRTCSocket.h */,
-				E8A89C4E2473B22400A92284 /* RongRTCBufferUtil.m */,
 				E8A89C4F2473B22400A92284 /* RongRTCSocketHeader.h */,
-				E8A89C502473B22400A92284 /* RongRTCClientSocket.m */,
-				E8A89C512473B22400A92284 /* RongRTCServerSocket.m */,
-				E8A89C522473B22400A92284 /* RongRTCThread.m */,
-				E8A89C532473B22400A92284 /* RongRTCBufferUtil.h */,
+				E8A89C4D2473B22400A92284 /* RongRTCSocket.h */,
 				E8A89C542473B22400A92284 /* RongRTCSocket.m */,
+				E8A89C4A2473B22400A92284 /* RongRTCClientSocket.h */,
+				E8A89C502473B22400A92284 /* RongRTCClientSocket.m */,
+				E8A89C4C2473B22400A92284 /* RongRTCServerSocket.h */,
+				E8A89C512473B22400A92284 /* RongRTCServerSocket.m */,
+				E8A89C532473B22400A92284 /* RongRTCBufferUtil.h */,
+				E8A89C4E2473B22400A92284 /* RongRTCBufferUtil.m */,
+				E8A89C4B2473B22400A92284 /* RongRTCThread.h */,
+				E8A89C522473B22400A92284 /* RongRTCThread.m */,
 			);
 			path = Socket;
 			sourceTree = "<group>";
@@ -552,11 +557,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8A89C442473B1C800A92284 /* RongRTCVideoDecoder.mm in Sources */,
+				E8A89C5A2473B2B900A92284 /* RongRTCSocket.m in Sources */,
+				E8A89C5C2473B2BF00A92284 /* RongRTCServerSocket.m in Sources */,
 				E8A89C452473B1CD00A92284 /* RongRTCCodec.m in Sources */,
 				E8A89C472473B1D700A92284 /* helpers.mm in Sources */,
+				E8A89C5E2473B2C800A92284 /* RongRTCThread.m in Sources */,
 				E8A89C282473B18500A92284 /* SampleHandler.m in Sources */,
 				E8A89C482473B1DB00A92284 /* RongRTCVideoEncoder.mm in Sources */,
+				E8A89C5D2473B2C100A92284 /* RongRTCBufferUtil.m in Sources */,
 				E8A89C462473B1D100A92284 /* RongRTCVideoEncoderSettings.m in Sources */,
+				E8A89C5B2473B2BC00A92284 /* RongRTCClientSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -839,6 +849,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9CVMN4UZK4;
 				INFOPLIST_FILE = SocketReplySetupUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -857,6 +868,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9CVMN4UZK4;
 				INFOPLIST_FILE = SocketReplySetupUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

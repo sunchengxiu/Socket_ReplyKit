@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <VideoToolbox/VideoToolbox.h>
 #import <pthread.h>
-#import <RongRTCLib/RongRTCLib.h>
+
 
 #import "RongRTCBufferUtil.h"
 NS_ASSUME_NONNULL_BEGIN
