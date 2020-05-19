@@ -130,6 +130,9 @@
     _frameTime += 1000;
     CMTime pts = CMTimeMake(_frameTime, 1000);
     CMSampleBufferRef sampleBuffer = [RongRTCBufferUtil sampleBufferFromPixbuffer:pixelBuffer time:pts];
+    // 查看解码数据是否有问题，如果image能显示，就说明对了。
+    // 通过打断点 将鼠标放在 iamge 脑袋上，就可以看到数据了，点击那个小眼睛
+    UIImage *image = [RongRTCBufferUtil imageFromBuffer:sampleBuffer];
     [self.delegate didProcessSampleBuffer:sampleBuffer];
     CFRelease(sampleBuffer);
 }
