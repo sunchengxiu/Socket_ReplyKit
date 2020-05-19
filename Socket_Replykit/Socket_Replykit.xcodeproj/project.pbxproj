@@ -43,6 +43,7 @@
 		E8A89C5C2473B2BF00A92284 /* RongRTCServerSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C512473B22400A92284 /* RongRTCServerSocket.m */; };
 		E8A89C5D2473B2C100A92284 /* RongRTCBufferUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C4E2473B22400A92284 /* RongRTCBufferUtil.m */; };
 		E8A89C5E2473B2C800A92284 /* RongRTCThread.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C522473B22400A92284 /* RongRTCThread.m */; };
+		E8A89C622473C32200A92284 /* OtherTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A89C612473C32200A92284 /* OtherTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +143,8 @@
 		E8A89C522473B22400A92284 /* RongRTCThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RongRTCThread.m; sourceTree = "<group>"; };
 		E8A89C532473B22400A92284 /* RongRTCBufferUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RongRTCBufferUtil.h; sourceTree = "<group>"; };
 		E8A89C542473B22400A92284 /* RongRTCSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RongRTCSocket.m; sourceTree = "<group>"; };
+		E8A89C602473C32200A92284 /* OtherTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtherTest.h; sourceTree = "<group>"; };
+		E8A89C612473C32200A92284 /* OtherTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OtherTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +217,7 @@
 		E8A89B9A2473B0D400A92284 /* Socket_Replykit */ = {
 			isa = PBXGroup;
 			children = (
+				E8A89C5F2473C30F00A92284 /* OtherTest */,
 				E8A89C492473B22400A92284 /* Socket */,
 				E8A89C0A2473B10500A92284 /* Codec */,
 				E8A89C122473B10500A92284 /* Decoder */,
@@ -328,6 +332,15 @@
 				E8A89C522473B22400A92284 /* RongRTCThread.m */,
 			);
 			path = Socket;
+			sourceTree = "<group>";
+		};
+		E8A89C5F2473C30F00A92284 /* OtherTest */ = {
+			isa = PBXGroup;
+			children = (
+				E8A89C602473C32200A92284 /* OtherTest.h */,
+				E8A89C612473C32200A92284 /* OtherTest.m */,
+			);
+			path = OtherTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -522,6 +535,7 @@
 				E8A89BA32473B0D400A92284 /* ViewController.m in Sources */,
 				E8A89C1C2473B10500A92284 /* RongRTCVideoEncoder.mm in Sources */,
 				E8A89C582473B22400A92284 /* RongRTCThread.m in Sources */,
+				E8A89C622473C32200A92284 /* OtherTest.m in Sources */,
 				E8A89C1A2473B10500A92284 /* RongRTCVideoEncoderSettings.m in Sources */,
 				E8A89C1B2473B10500A92284 /* RongRTCVideoDecoder.mm in Sources */,
 				E8A89C562473B22400A92284 /* RongRTCClientSocket.m in Sources */,
