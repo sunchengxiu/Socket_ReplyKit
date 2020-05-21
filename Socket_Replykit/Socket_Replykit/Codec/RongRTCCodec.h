@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 编解码配置
 @property(nonatomic , strong , readonly)RongRTCVideoEncoderSettings *settings;
 
-/// 回调和编解码队列
+/// 回调队列
 @property(nonatomic , strong , readonly)dispatch_queue_t callbackQueue;
 
 /// 代理
@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 使用编解码器之前的配置
 /// @param settings 配置
-/// @param queue 编解码以及回调队列
+/// @param queue 是否在指定队列里面回调代理方法，如果不传，默认在主线程回调代理方法
 - (BOOL)configWithSettings:(RongRTCVideoEncoderSettings *)settings onQueue:(dispatch_queue_t)queue;
 
 /// 编码
