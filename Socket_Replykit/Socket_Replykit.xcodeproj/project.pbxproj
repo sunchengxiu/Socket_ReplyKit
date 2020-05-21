@@ -220,8 +220,6 @@
 				E8A89C5F2473C30F00A92284 /* OtherTest */,
 				E8A89C492473B22400A92284 /* Socket */,
 				E8A89C0A2473B10500A92284 /* Codec */,
-				E8A89C122473B10500A92284 /* Decoder */,
-				E8A89C152473B10500A92284 /* Encoder */,
 				E8A89B9B2473B0D400A92284 /* AppDelegate.h */,
 				E8A89B9C2473B0D400A92284 /* AppDelegate.m */,
 				E8A89B9E2473B0D400A92284 /* SceneDelegate.h */,
@@ -258,6 +256,8 @@
 		E8A89C0A2473B10500A92284 /* Codec */ = {
 			isa = PBXGroup;
 			children = (
+				E8A89C152473B10500A92284 /* Encoder */,
+				E8A89C122473B10500A92284 /* Decoder */,
 				E8A89C0F2473B10500A92284 /* RongRTCCodec.h */,
 				E8A89C0B2473B10500A92284 /* RongRTCCodec.m */,
 				E8A89C102473B10500A92284 /* RongRTCVideoEncoderSettings.h */,
@@ -319,13 +319,11 @@
 		E8A89C492473B22400A92284 /* Socket */ = {
 			isa = PBXGroup;
 			children = (
+				E8A89C9624761F6500A92284 /* Server */,
+				E8A89C9524761F5D00A92284 /* Client */,
 				E8A89C4F2473B22400A92284 /* RongRTCSocketHeader.h */,
 				E8A89C4D2473B22400A92284 /* RongRTCSocket.h */,
 				E8A89C542473B22400A92284 /* RongRTCSocket.m */,
-				E8A89C4A2473B22400A92284 /* RongRTCClientSocket.h */,
-				E8A89C502473B22400A92284 /* RongRTCClientSocket.m */,
-				E8A89C4C2473B22400A92284 /* RongRTCServerSocket.h */,
-				E8A89C512473B22400A92284 /* RongRTCServerSocket.m */,
 				E8A89C532473B22400A92284 /* RongRTCBufferUtil.h */,
 				E8A89C4E2473B22400A92284 /* RongRTCBufferUtil.m */,
 				E8A89C4B2473B22400A92284 /* RongRTCThread.h */,
@@ -341,6 +339,24 @@
 				E8A89C612473C32200A92284 /* OtherTest.m */,
 			);
 			path = OtherTest;
+			sourceTree = "<group>";
+		};
+		E8A89C9524761F5D00A92284 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				E8A89C4A2473B22400A92284 /* RongRTCClientSocket.h */,
+				E8A89C502473B22400A92284 /* RongRTCClientSocket.m */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		E8A89C9624761F6500A92284 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				E8A89C4C2473B22400A92284 /* RongRTCServerSocket.h */,
+				E8A89C512473B22400A92284 /* RongRTCServerSocket.m */,
+			);
+			path = Server;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -17,6 +17,7 @@
     NSUInteger _ppsSize;
     CMVideoFormatDescriptionRef _videoFormatDescription;
     VTDecompressionSessionRef _decompressionSession;
+    dispatch_queue_t _decodeQueue;
 }
 /**
  settings
@@ -27,6 +28,8 @@
  callback queue
  */
 @property(nonatomic , strong )dispatch_queue_t callbackQueue;
+
+
 @end
 void DecoderOutputCallback(void * CM_NULLABLE decompressionOutputRefCon,
                            void * CM_NULLABLE sourceFrameRefCon,
@@ -42,10 +45,14 @@ void DecoderOutputCallback(void * CM_NULLABLE decompressionOutputRefCon,
     CVPixelBufferRef *outputPixelBuffer = (CVPixelBufferRef *)sourceFrameRefCon;
     *outputPixelBuffer = CVPixelBufferRetain(imageBuffer);
     RongRTCVideoDecoder *decoder = (__bridge RongRTCVideoDecoder *)(decompressionOutputRefCon);
-    dispatch_async(decoder.callbackQueue, ^{
-        [decoder.delegate didGetDecodeBuffer:imageBuffer];
-        CVPixelBufferRelease(imageBuffer);
-    });
+    if (decoder && decoder.callbackQueue) {
+        dispatch_async(decoder.callbackQueue, ^{
+            if (decoder.delegate && [decoder.delegate respondsToSelector:@selector(didGetDecodeBuffer:)]) {
+                [decoder.delegate didGetDecodeBuffer:imageBuffer];
+            }
+            CVPixelBufferRelease(imageBuffer);
+        });
+    }
 }
 @implementation RongRTCVideoDecoder
 
@@ -60,6 +67,7 @@ void DecoderOutputCallback(void * CM_NULLABLE decompressionOutputRefCon,
     } else {
         _callbackQueue = dispatch_get_main_queue();
     }
+     _decodeQueue = dispatch_queue_create("com.rongcloud.encodeQueue", NULL);
     return YES;
 }
 - (BOOL)createVT{
@@ -145,38 +153,38 @@ void DecoderOutputCallback(void * CM_NULLABLE decompressionOutputRefCon,
     [self createVT];
 }
 -(void)decode:(NSData *)data{
-    //    dispatch_async(_callbackQueue, ^{
-    uint8_t *frame = (uint8_t*)[data bytes];
-    uint32_t length = data.length;
-    uint32_t nalSize = (uint32_t)(length - 4);
-    uint32_t *pNalSize = (uint32_t *)frame;
-    *pNalSize = CFSwapInt32HostToBig(nalSize);
-    
-    int type = (frame[4] & 0x1F);
-    CVPixelBufferRef pixelBuffer = NULL;
-    switch (type) {
-        case 0x05:
-            if ([self createVT]) {
-                pixelBuffer= [self decode:frame withSize:length];
-            }
-            break;
-        case 0x07:
-            self->_spsSize = length - 4;
-            self->_sps = (uint8_t *)malloc(self->_spsSize);
-            memcpy(self->_sps, &frame[4], self->_spsSize);
-            break;
-        case 0x08:
-            self->_ppsSize = length - 4;
-            self->_pps = (uint8_t *)malloc(self->_ppsSize);
-            memcpy(self->_pps, &frame[4], self->_ppsSize);
-            break;
-        default:
-            if ([self createVT]) {
-                pixelBuffer = [self decode:frame withSize:length];
-            }
-            break;
-    }
-    //    });
+    dispatch_async(_decodeQueue, ^{
+        uint8_t *frame = (uint8_t*)[data bytes];
+        uint32_t length = (uint32_t)data.length;
+        uint32_t nalSize = (uint32_t)(length - 4);
+        uint32_t *pNalSize = (uint32_t *)frame;
+        *pNalSize = CFSwapInt32HostToBig(nalSize);
+        
+        int type = (frame[4] & 0x1F);
+        CVPixelBufferRef pixelBuffer = NULL;
+        switch (type) {
+            case 0x05:
+                if ([self createVT]) {
+                    pixelBuffer= [self decode:frame withSize:length];
+                }
+                break;
+            case 0x07:
+                self->_spsSize = length - 4;
+                self->_sps = (uint8_t *)malloc(self->_spsSize);
+                memcpy(self->_sps, &frame[4], self->_spsSize);
+                break;
+            case 0x08:
+                self->_ppsSize = length - 4;
+                self->_pps = (uint8_t *)malloc(self->_ppsSize);
+                memcpy(self->_pps, &frame[4], self->_ppsSize);
+                break;
+            default:
+                if ([self createVT]) {
+                    pixelBuffer = [self decode:frame withSize:length];
+                }
+                break;
+        }
+    });
 }
 
 - (void)dealloc

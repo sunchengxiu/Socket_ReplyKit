@@ -13,7 +13,7 @@
 @interface RongRTCVideoEncoder(){
     VTCompressionSessionRef _compressionSession;
     int _frameTime;
-    
+    dispatch_queue_t _encodeQueue;
 }
 /**
  settings
@@ -24,6 +24,7 @@
  callback queue
  */
 @property(nonatomic , strong )dispatch_queue_t callbackQueue;
+
 - (void)sendSpsAndPPSWithSampleBuffer:(CMSampleBufferRef)sampleBuffer;
 - (void)sendNaluData:(CMSampleBufferRef)sampleBuffer;
 @end
@@ -59,7 +60,6 @@ void compressionOutputCallback(void *encoder,
         CFRetain(contiguous_buffer);
         block_buffer = nullptr;
     }
-    size_t block_buffer_size = CMBlockBufferGetDataLength(contiguous_buffer);
     if (isKeyFrame) {
         [videoEncoder sendSpsAndPPSWithSampleBuffer:sampleBuffer];
     }
@@ -81,6 +81,7 @@ void compressionOutputCallback(void *encoder,
     } else {
         _callbackQueue = dispatch_get_main_queue();
     }
+    _encodeQueue = dispatch_queue_create("com.rongcloud.encodeQueue", NULL);
     if ([self resetCompressionSession:settings]) {
         _frameTime = 0;
         return YES;
@@ -114,26 +115,26 @@ void compressionOutputCallback(void *encoder,
     }
 }
 -(void)encode:(CMSampleBufferRef)sampleBuffer{
-    //    CFRetain(sampleBuffer);
-    //    dispatch_async(_encodeQueue, ^{
-    CVImageBufferRef imageBuffer = (CVImageBufferRef)CMSampleBufferGetImageBuffer(sampleBuffer);
-    CMTime pts = CMTimeMake(self->_frameTime++, 1000);
-    VTEncodeInfoFlags flags;
-    OSStatus res = VTCompressionSessionEncodeFrame(self->_compressionSession,
-                                                   imageBuffer,
-                                                   pts,
-                                                   kCMTimeInvalid,
-                                                   NULL, NULL, &flags);
-    
-    //        CFRelease(sampleBuffer);
-    if (res != noErr) {
-        NSLog(@"encode frame error:%d", (int)res);
-        VTCompressionSessionInvalidate(self->_compressionSession);
-        CFRelease(self->_compressionSession);
-        self->_compressionSession = NULL;
-        return;
-    }
-    //    });
+    CFRetain(sampleBuffer);
+    dispatch_async(_encodeQueue, ^{
+        CVImageBufferRef imageBuffer = (CVImageBufferRef)CMSampleBufferGetImageBuffer(sampleBuffer);
+        CMTime pts = CMTimeMake(self->_frameTime++, 1000);
+        VTEncodeInfoFlags flags;
+        OSStatus res = VTCompressionSessionEncodeFrame(self->_compressionSession,
+                                                       imageBuffer,
+                                                       pts,
+                                                       kCMTimeInvalid,
+                                                       NULL, NULL, &flags);
+        
+        CFRelease(sampleBuffer);
+        if (res != noErr) {
+            NSLog(@"encode frame error:%d", (int)res);
+            VTCompressionSessionInvalidate(self->_compressionSession);
+            CFRelease(self->_compressionSession);
+            self->_compressionSession = NULL;
+            return;
+        }
+    });
     
 }
 - (void)sendSpsAndPPSWithSampleBuffer:(CMSampleBufferRef)sampleBuffer{
@@ -188,11 +189,13 @@ void compressionOutputCallback(void *encoder,
         NSMutableData *naluData = [NSMutableData dataWithCapacity:4 + naluLength];
         [naluData appendBytes:bytes length:4];
         [naluData appendBytes:dataPointer + bufferOffset + h264HeaderLength length:naluLength];
-        dispatch_async(self.callbackQueue, ^{
-            if (self.delegate && [self.delegate respondsToSelector:@selector(naluData:)]) {
-                [self.delegate naluData:naluData];
-            }
-        });
+        if (self.callbackQueue) {
+            dispatch_async(self.callbackQueue, ^{
+                if (self.delegate && [self.delegate respondsToSelector:@selector(naluData:)]) {
+                    [self.delegate naluData:naluData];
+                }
+            });
+        }
         bufferOffset += naluLength + h264HeaderLength;
     }
 }
